@@ -9,7 +9,7 @@
 #
 
  schedule :
-  - cron: 0 0 * * 2
+   - cron: 0 0 * * 2
   
  name: Build OpenWrt
 
@@ -37,7 +37,7 @@
   TZ: Asia/Shanghai
 
  jobs:
-  build:
+   build:
     runs-on: ubuntu-20.04
 
     steps:
