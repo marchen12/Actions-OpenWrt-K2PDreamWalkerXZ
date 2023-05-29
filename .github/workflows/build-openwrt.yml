@@ -8,11 +8,12 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt
-
  schedule :
-- cron: 0 0 * * 2
-on:
+  - cron: 0 0 * * 2
+  
+ name: Build OpenWrt
+
+ on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
@@ -21,7 +22,7 @@ on:
         required: false
         default: 'false'
 
-env:
+ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
@@ -35,7 +36,7 @@ env:
   UPLOAD_RELEASE: false
   TZ: Asia/Shanghai
 
-jobs:
+ jobs:
   build:
     runs-on: ubuntu-20.04
 
